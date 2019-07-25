@@ -130,19 +130,19 @@ export class Home extends React.Component {
 						<div className="row">
 							<div
 								id="a1" //delete this.virtualb line if using null
-								className="col border border-3 border-dark"
+								className="col border border-4 border-white display-1 text-center pt-4 shadow"
 								onClick={e => this.checkpoint(e)}>
 								{this.virtualB.a1}
 							</div>
 							<div
 								id="a2"
-								className="col border border-3 border-dark"
+								className="col border border-4 border-white display-1 text-center pt-4 shadow"
 								onClick={e => this.checkpoint(e)}>
 								{this.virtualB.a2}
 							</div>
 							<div
 								id="a3"
-								className="col border border-3 border-dark"
+								className="col border border-4 border-white display-1 text-center pt-4 shadow"
 								onClick={e => this.checkpoint(e)}>
 								{this.virtualB.a3}
 							</div>
@@ -151,19 +151,19 @@ export class Home extends React.Component {
 						<div className="row">
 							<div
 								id="b1"
-								className="col border border-3 border-dark"
+								className="col border border-4 border-white display-1 text-center pt-4 shadow"
 								onClick={e => this.checkpoint(e)}>
 								{this.virtualB.b1}
 							</div>
 							<div
 								id="b2"
-								className="col border border-3 border-dark"
+								className="col border border-4 border-white display-1 text-center pt-4 shadow"
 								onClick={e => this.checkpoint(e)}>
 								{this.virtualB.b2}
 							</div>
 							<div
 								id="b3"
-								className="col border border-3 border-dark"
+								className="col border border-4 border-white display-1 text-center pt-4 shadow"
 								onClick={e => this.checkpoint(e)}>
 								{this.virtualB.b3}
 							</div>
@@ -172,19 +172,19 @@ export class Home extends React.Component {
 						<div className="row">
 							<div
 								id="c1"
-								className="col border border-3 border-dark"
+								className="col border border-4 border-white display-1 text-center pt-4 shadow"
 								onClick={e => this.checkpoint(e)}>
 								{this.virtualB.c1}
 							</div>
 							<div
 								id="c2"
-								className="col border border-3 border-dark"
+								className="col border border-4 border-white display-1 text-center pt-4 shadow"
 								onClick={e => this.checkpoint(e)}>
 								{this.virtualB.c2}
 							</div>
 							<div
 								id="c3"
-								className="col border border-3 border-dark"
+								className="col border border-4 border-white display-1 text-center pt-4 shadow"
 								onClick={e => this.checkpoint(e)}>
 								{this.virtualB.c3}
 							</div>

@@ -12,6 +12,29 @@
 
 */
 
+
+.border{
+    border: 10px solid #fff;
+}
 .col{
     height: 200px;
+}
+
+body{
+    height: 800px;
+    background-image: url('https://figure53.com/notes/2014-06-13-thank-you-qlab-but-our-princess/background-simple.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: animatedBackground 20s linear infinite;
+    
+}
+
+.border-4 {
+    border-width:4px !important;
+}
+
+@keyframes animatedBackground {
+	from { background-position: 0 0; }
+	to { background-position: 100% 0; }
 }
