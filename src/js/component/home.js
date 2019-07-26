@@ -26,13 +26,19 @@ export class Home extends React.Component {
 	gameOver = () => {
 		let button = document.querySelector("button");
 		let bBbackground = document.querySelector(".B-background");
+		let playerX = document.querySelector(".winnerX");
+		let playerO = document.querySelector(".winnerO");
 
-		button.style.display = "none";
-		bBbackground.style.display = "none";
-		let WinnerX = () =>
-			alert("Player X Wins, Better luck next time Player O!");
-		let WinnerO = () =>
-			alert("Player O Wins, Better luck next time Player X!");
+		let WinnerX = () => {
+			bBbackground.style.visibility = "visible";
+			button.style.visibility = "visible";
+			playerX.style.visibility = "visible";
+		};
+		let WinnerO = () => {
+			bBbackground.style.visibility = "visible";
+			button.style.visibility = "visible";
+			playerO.style.visibility = "visible";
+		};
 
 		if (
 			(this.virtualB.a1 === "X" &&
@@ -60,13 +66,14 @@ export class Home extends React.Component {
 				this.virtualB.b2 === "X" &&
 				this.virtualB.c1 === "X")
 		) {
-			setTimeout(() => {
-				WinnerX();
-			}, 1000);
+			WinnerX();
+			// setTimeout(() => {
+			// 	WinnerX();
+			// }, 1000);
 
-			setTimeout(() => {
-				window.location.reload();
-			}, 2000);
+			// setTimeout(() => {
+			// 	window.location.reload();
+			// }, 2000);
 		} else if (
 			(this.virtualB.a1 === "O" &&
 				this.virtualB.a2 === "O" &&
@@ -93,9 +100,10 @@ export class Home extends React.Component {
 				this.virtualB.b2 === "O" &&
 				this.virtualB.c1 === "O")
 		) {
-			setTimeout(() => {
-				WinnerO();
-			}, 1000);
+			WinnerO();
+			// setTimeout(() => {
+			// 	WinnerO();
+			// }, 1000);
 		}
 	};
 	checkpoint(e) {
