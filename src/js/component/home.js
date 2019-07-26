@@ -7,7 +7,8 @@ export class Home extends React.Component {
 	constructor() {
 		super();
 		this.state = {
-			player: "X"
+			player: "X",
+			winner: null
 		};
 	}
 
@@ -67,6 +68,7 @@ export class Home extends React.Component {
 				this.virtualB.c1 === "X")
 		) {
 			WinnerX();
+			this.setState({ winner: "X" });
 			// setTimeout(() => {
 			// 	WinnerX();
 			// }, 1000);
@@ -101,6 +103,7 @@ export class Home extends React.Component {
 				this.virtualB.c1 === "O")
 		) {
 			WinnerO();
+			this.setState({ winner: "O" });
 			// setTimeout(() => {
 			// 	WinnerO();
 			// }, 1000);
@@ -137,6 +140,9 @@ export class Home extends React.Component {
 	render() {
 		return (
 			<div className="container">
+				{this.state.winner && (
+					<div className="row B-background">ciao</div>
+				)}
 				<div className="row">
 					<div className="offset-3 col-6 mt-5">
 						<div className="row">
