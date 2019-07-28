@@ -30,6 +30,7 @@
 
 }
 
+
 .winnerO,
 .winnerX{
     color: red;
@@ -37,6 +38,10 @@
     text-shadow: 1px 2px rgb(97, 92, 92);
 }
 
+.container2{
+    margin-left: -400px;
+    margin-right: -400px;
+}
 
 .btn{
     margin-top: 10px;
@@ -50,7 +55,7 @@
 }
 
 body{
-    height: 800px;
+    height: 870px;
     background-image: url('https://figure53.com/notes/2014-06-13-thank-you-qlab-but-our-princess/background-simple.png');
     background-position: center;
     background-repeat: no-repeat;

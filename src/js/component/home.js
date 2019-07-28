@@ -1,8 +1,6 @@
 import React from "react";
+import { Drops } from "./dropdown.js";
 
-//include images into your bundle
-
-//create your first component
 export class Home extends React.Component {
 	constructor() {
 		super();
@@ -40,7 +38,6 @@ export class Home extends React.Component {
 			button.style.visibility = "visible";
 			playerO.style.visibility = "visible";
 		};
-
 		if (
 			(this.virtualB.a1 === "X" &&
 				this.virtualB.a2 === "X" &&
@@ -122,29 +119,29 @@ export class Home extends React.Component {
 			}
 		}
 
-		let counter = 0;
-		for (let key in this.virtualB) {
-			if (this.virtualB[key] !== "") {
-				counter++;
-			}
-		}
-
-		//alerts after 1 second to let the check on board before alert is called
-		setTimeout(() => {
-			if (counter === 9) {
-				alert("Game Over, Everyone's a Loser :(");
-			}
-		}, 1000);
+		// let counter = 0;
+		// for (let key in this.virtualB) {
+		// 	if (this.virtualB[key] !== "") {
+		// 		counter++;
+		// 	}
 	}
+	//
+	//alerts after 1 second to let the check on board before alert is called
+	// 	setTimeout(() => {
+	// 		if (counter === 9) {
+	// 			alert("Game Over, Everyone's a Loser :(");
+	// 		}
+	// 	}, 1000);
+	// }
 
 	render() {
 		return (
 			<div className="container">
-				{this.state.winner && (
-					<div className="row B-background">ciao</div>
-				)}
+				<div className="drops">
+					<Drops />
+				</div>
 				<div className="row">
-					<div className="offset-3 col-6 mt-5">
+					<div className="offset-3 col-6 mt-4">
 						<div className="row">
 							<div
 								id="a1" //delete this.virtualb line if using null
