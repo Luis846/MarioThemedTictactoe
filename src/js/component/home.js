@@ -11,6 +11,14 @@ const Bowser = (
 	/>
 );
 
+const Question = (
+	<img src="http://icons.iconarchive.com/icons/ph03nyx/super-mario/128/Retro-Block-Question-icon.png" />
+);
+
+// const musicOnePlay = () => {
+// 	startMusic();
+// };
+
 export class Home extends React.Component {
 	constructor() {
 		super();
@@ -37,6 +45,7 @@ export class Home extends React.Component {
 		let bBbackground = document.querySelector(".B-background");
 		let playerX = document.querySelector(".winnerX");
 		let playerO = document.querySelector(".winnerO");
+		let playerZero = document.querySelector(".winnerZero");
 
 		let WinnerX = () => {
 			bBbackground.style.visibility = "visible";
@@ -48,6 +57,13 @@ export class Home extends React.Component {
 			button.style.visibility = "visible";
 			playerO.style.visibility = "visible";
 		};
+
+		let WinnerZero = () => {
+			bBbackground.style.visibility = "visible";
+			button.style.visibility = "visible";
+			playerZero.style.visibility = "visible";
+		};
+
 		if (
 			(this.virtualB.a1 === Mario &&
 				this.virtualB.a2 === Mario &&
@@ -74,11 +90,11 @@ export class Home extends React.Component {
 					this.virtualB.b2 === Mario &&
 					this.virtualB.c1 === Mario))
 		) {
-			WinnerX();
+			// WinnerX();
 			this.setState({ winner: Mario });
-			// setTimeout(() => {
-			// 	WinnerX();
-			// }, 1000);
+			setTimeout(() => {
+				WinnerX();
+			}, 100);
 
 			// setTimeout(() => {
 			// 	window.location.reload();
@@ -109,11 +125,26 @@ export class Home extends React.Component {
 				this.virtualB.b2 === Bowser &&
 				this.virtualB.c1 === Bowser)
 		) {
-			WinnerO();
+			// WinnerO();
 			this.setState({ winner: Bowser });
-			// setTimeout(() => {
-			// 	WinnerO();
-			// }, 1000);
+			setTimeout(() => {
+				WinnerO();
+			}, 100);
+		}
+		let counter = 0;
+		for (let key in this.virtualB) {
+			if (this.virtualB[key] !== "") {
+				counter++;
+			}
+		}
+
+		// alerts after 1 second to let the check on board before alert is called
+
+		if (counter === 9) {
+			this.setState({ winner: null });
+			setTimeout(() => {
+				WinnerZero();
+			}, 100);
 		}
 	};
 	checkpoint(e) {
@@ -128,26 +159,18 @@ export class Home extends React.Component {
 				this.setState({ player: Mario });
 			}
 		}
-
-		// let counter = 0;
-		// for (let key in this.virtualB) {
-		// 	if (this.virtualB[key] !== "") {
-		// 		counter++;
-		// 	}
 	}
-	//
-	//alerts after 1 second to let the check on board before alert is called
-	// 	setTimeout(() => {
-	// 		if (counter === 9) {
-	// 			alert("Game Over, Everyone's a Loser :(");
-	// 		}
-	// 	}, 1000);
-	// }
 
 	render() {
 		return (
 			<div className="container">
 				<div className="drops">
+					<audio autoPlay>
+						<source
+							src="http://23.237.126.42/ost/super-mario-bros/khbnvkqp/01%20-%20Super%20Mario%20Bros.mp3"
+							type="audio/mp3"
+						/>
+					</audio>
 					<Drops />
 				</div>
 				<div className="row">

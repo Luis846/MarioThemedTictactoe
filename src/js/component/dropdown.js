@@ -6,6 +6,9 @@ const Mario =
 const Bowser =
 	"http://lostcoastoutpost.com/media/uploads/daydescription/308/Smb1_bowser.png";
 
+const Question =
+	"http://icons.iconarchive.com/icons/ph03nyx/super-mario/128/Retro-Block-Question-icon.png";
+
 export class Drops extends React.Component {
 	constructor() {
 		super();
@@ -21,6 +24,11 @@ export class Drops extends React.Component {
 					<span className="winnerX">
 						<img className="Mario" src={Mario} />
 						You Win Mario!
+					</span>
+
+					<span className="winnerZero">
+						<img className="Question" src={Question} />
+						Nobody Wins!
 					</span>
 
 					<span className="winnerO pr-5">
