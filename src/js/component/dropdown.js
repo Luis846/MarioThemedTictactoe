@@ -1,6 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
+let Mario =
+	"http://icons.iconarchive.com/icons/ph03nyx/super-mario/128/Retro-Mario-icon.png";
+let Bowser =
+	"http://lostcoastoutpost.com/media/uploads/daydescription/308/Smb1_bowser.png";
+
 export class Drops extends React.Component {
 	constructor() {
 		super();
@@ -13,9 +18,15 @@ export class Drops extends React.Component {
 		return (
 			<div className="container2">
 				<div className="B-background">
-					<span className="winnerX pr-5">You Win Player X:</span>
+					<span className="winnerX">
+						<img className="Mario" src={Mario} />
+						You Win Mario!
+					</span>
 
-					<span className="winnerO pr-5">You Win Player O:</span>
+					<span className="winnerO pr-5">
+						<img className="Bowser" src={Bowser} />
+						How unfortunate, Bowser Wins
+					</span>
 
 					<button
 						type="button"
