@@ -1,9 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-let Mario =
+const Mario =
 	"http://icons.iconarchive.com/icons/ph03nyx/super-mario/128/Retro-Mario-icon.png";
-let Bowser =
+const Bowser =
 	"http://lostcoastoutpost.com/media/uploads/daydescription/308/Smb1_bowser.png";
 
 export class Drops extends React.Component {

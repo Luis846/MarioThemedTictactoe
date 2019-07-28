@@ -1,11 +1,21 @@
 import React from "react";
 import { Drops } from "./dropdown.js";
 
+const Mario = (
+	<img src="http://icons.iconarchive.com/icons/ph03nyx/super-mario/128/Retro-Mario-icon.png" />
+);
+const Bowser = (
+	<img
+		src="http://lostcoastoutpost.com/media/uploads/daydescription/308/Smb1_bowser.png"
+		style={{ width: "128px", height: "128px" }}
+	/>
+);
+
 export class Home extends React.Component {
 	constructor() {
 		super();
 		this.state = {
-			player: "X",
+			player: Mario,
 			winner: null
 		};
 	}
@@ -39,33 +49,33 @@ export class Home extends React.Component {
 			playerO.style.visibility = "visible";
 		};
 		if (
-			(this.virtualB.a1 === "X" &&
-				this.virtualB.a2 === "X" &&
-				this.virtualB.a3 === "X") ||
-			(this.virtualB.b1 === "X" &&
-				this.virtualB.b2 === "X" &&
-				this.virtualB.b3 === "X") ||
-			(this.virtualB.c1 === "X" &&
-				this.virtualB.c2 === "X" &&
-				this.virtualB.c3 === "X") ||
-			(this.virtualB.a1 === "X" &&
-				this.virtualB.b1 === "X" &&
-				this.virtualB.c1 === "X") ||
-			(this.virtualB.a2 === "X" &&
-				this.virtualB.b2 === "X" &&
-				this.virtualB.c2 === "X") ||
-			(this.virtualB.a3 === "X" &&
-				this.virtualB.b3 === "X" &&
-				this.virtualB.c3 === "X") ||
-			(this.virtualB.a1 === "X" &&
-				this.virtualB.b2 === "X" &&
-				this.virtualB.c3 === "X") ||
-			(this.virtualB.a3 === "X" &&
-				this.virtualB.b2 === "X" &&
-				this.virtualB.c1 === "X")
+			(this.virtualB.a1 === Mario &&
+				this.virtualB.a2 === Mario &&
+				this.virtualB.a3 === Mario) ||
+			((this.virtualB.b1 === Mario &&
+				this.virtualB.b2 === Mario &&
+				this.virtualB.b3 === Mario) ||
+				(this.virtualB.c1 === Mario &&
+					this.virtualB.c2 === Mario &&
+					this.virtualB.c3 === Mario) ||
+				(this.virtualB.a1 === Mario &&
+					this.virtualB.b1 === Mario &&
+					this.virtualB.c1 === Mario) ||
+				(this.virtualB.a2 === Mario &&
+					this.virtualB.b2 === Mario &&
+					this.virtualB.c2 === Mario) ||
+				(this.virtualB.a3 === Mario &&
+					this.virtualB.b3 === Mario &&
+					this.virtualB.c3 === Mario) ||
+				(this.virtualB.a1 === Mario &&
+					this.virtualB.b2 === Mario &&
+					this.virtualB.c3 === Mario) ||
+				(this.virtualB.a3 === Mario &&
+					this.virtualB.b2 === Mario &&
+					this.virtualB.c1 === Mario))
 		) {
 			WinnerX();
-			this.setState({ winner: "X" });
+			this.setState({ winner: Mario });
 			// setTimeout(() => {
 			// 	WinnerX();
 			// }, 1000);
@@ -74,33 +84,33 @@ export class Home extends React.Component {
 			// 	window.location.reload();
 			// }, 2000);
 		} else if (
-			(this.virtualB.a1 === "O" &&
-				this.virtualB.a2 === "O" &&
-				this.virtualB.a3 === "O") ||
-			(this.virtualB.b1 === "O" &&
-				this.virtualB.b2 === "O" &&
-				this.virtualB.b3 === "O") ||
-			(this.virtualB.c1 === "O" &&
-				this.virtualB.c2 === "O" &&
-				this.virtualB.c3 === "O") ||
-			(this.virtualB.a1 === "O" &&
-				this.virtualB.b1 === "O" &&
-				this.virtualB.c1 === "O") ||
-			(this.virtualB.a2 === "O" &&
-				this.virtualB.b2 === "O" &&
-				this.virtualB.c2 === "O") ||
-			(this.virtualB.a3 === "O" &&
-				this.virtualB.b3 === "O" &&
-				this.virtualB.c3 === "O") ||
-			(this.virtualB.a1 === "O" &&
-				this.virtualB.b2 === "O" &&
-				this.virtualB.c3 === "O") ||
-			(this.virtualB.a3 === "O" &&
-				this.virtualB.b2 === "O" &&
-				this.virtualB.c1 === "O")
+			(this.virtualB.a1 === Bowser &&
+				this.virtualB.a2 === Bowser &&
+				this.virtualB.a3 === Bowser) ||
+			(this.virtualB.b1 === Bowser &&
+				this.virtualB.b2 === Bowser &&
+				this.virtualB.b3 === Bowser) ||
+			(this.virtualB.c1 === Bowser &&
+				this.virtualB.c2 === Bowser &&
+				this.virtualB.c3 === Bowser) ||
+			(this.virtualB.a1 === Bowser &&
+				this.virtualB.b1 === Bowser &&
+				this.virtualB.c1 === Bowser) ||
+			(this.virtualB.a2 === Bowser &&
+				this.virtualB.b2 === Bowser &&
+				this.virtualB.c2 === Bowser) ||
+			(this.virtualB.a3 === Bowser &&
+				this.virtualB.b3 === Bowser &&
+				this.virtualB.c3 === Bowser) ||
+			(this.virtualB.a1 === Bowser &&
+				this.virtualB.b2 === Bowser &&
+				this.virtualB.c3 === Bowser) ||
+			(this.virtualB.a3 === Bowser &&
+				this.virtualB.b2 === Bowser &&
+				this.virtualB.c1 === Bowser)
 		) {
 			WinnerO();
-			this.setState({ winner: "O" });
+			this.setState({ winner: Bowser });
 			// setTimeout(() => {
 			// 	WinnerO();
 			// }, 1000);
@@ -111,11 +121,11 @@ export class Home extends React.Component {
 			// e.target.innerHTML = this.state.player; use this  line is going to use null instead of ""
 			this.virtualB[e.target.id] = this.state.player;
 			this.gameOver();
-			if (this.state.player === "X") {
-				this.setState({ player: "O" });
+			if (this.state.player === Mario) {
+				this.setState({ player: Bowser });
 			}
-			if (this.state.player === "O") {
-				this.setState({ player: "X" });
+			if (this.state.player === Bowser) {
+				this.setState({ player: Mario });
 			}
 		}
 
