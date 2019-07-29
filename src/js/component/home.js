@@ -10,22 +10,6 @@ const Bowser = (
 		style={{ width: "128px", height: "128px" }}
 	/>
 );
-const audioOne = (
-	<audio className="audioOne" autoPlay>
-		<source
-			src="http://23.237.126.42/ost/super-mario-bros/khbnvkqp/01%20-%20Super%20Mario%20Bros.mp3"
-			type="audio/mp3"
-		/>
-	</audio>
-);
-const audioTwo = (
-	<audio className="audioTwo" autoPlay>
-		<source
-			src="http://23.237.126.42/ost/super-mario-bros/juxuzytm/15%20-%201-Down.mp3"
-			type="audio/mp3"
-		/>
-	</audio>
-);
 
 let sound = document.createElement("audio");
 sound.id = "audio-player";
@@ -67,6 +51,8 @@ export class Home extends React.Component {
 			bBbackground.style.visibility = "visible";
 			button.style.visibility = "visible";
 			playerX.style.visibility = "visible";
+			sound.src =
+				"http://23.237.126.42/ost/super-mario-bros/rqpfoktl/04%20-%20Area%20Clear.mp3";
 		};
 		let WinnerO = () => {
 			bBbackground.style.visibility = "visible";

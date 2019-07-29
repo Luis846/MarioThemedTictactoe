@@ -27,10 +27,10 @@ module.exports = {
               loader: "sass-loader" // compiles Sass to CSS
           }]
         }, //css only files
-        { 
+        {
           test: /\.(png|svg|jpg|gif)$/, use: {
             loader: 'file-loader',
-            options: { name: '[name].[ext]' } 
+            options: { name: '[name].[ext]' }
           }
         }, //for images
         { test: /\.woff($|\?)|\.woff2($|\?)|\.ttf($|\?)|\.eot($|\?)|\.svg($|\?)/, use: ['file-loader'] } //for fonts
@@ -57,7 +57,7 @@ module.exports = {
       Dropdown: "exports-loader?Dropdown!bootstrap/js/dist/dropdown"
     }),
     new HtmlWebpackPlugin({
-        favicon: '4geeks.ico',
+        favicon: 'mario.ico',
         template: 'template.html'
     }),
     new PrettierPlugin({
