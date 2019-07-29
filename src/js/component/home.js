@@ -10,14 +10,30 @@ const Bowser = (
 		style={{ width: "128px", height: "128px" }}
 	/>
 );
-
-const Question = (
-	<img src="http://icons.iconarchive.com/icons/ph03nyx/super-mario/128/Retro-Block-Question-icon.png" />
+const audioOne = (
+	<audio className="audioOne" autoPlay>
+		<source
+			src="http://23.237.126.42/ost/super-mario-bros/khbnvkqp/01%20-%20Super%20Mario%20Bros.mp3"
+			type="audio/mp3"
+		/>
+	</audio>
+);
+const audioTwo = (
+	<audio className="audioTwo" autoPlay>
+		<source
+			src="http://23.237.126.42/ost/super-mario-bros/juxuzytm/15%20-%201-Down.mp3"
+			type="audio/mp3"
+		/>
+	</audio>
 );
 
-// const musicOnePlay = () => {
-// 	startMusic();
-// };
+let sound = document.createElement("audio");
+sound.id = "audio-player";
+sound.autoplay = "autoPlay";
+sound.src =
+	"http://23.237.126.42/ost/super-mario-bros/khbnvkqp/01%20-%20Super%20Mario%20Bros.mp3";
+sound.type = "audio/mp3";
+document.querySelector(".songs").appendChild(sound);
 
 export class Home extends React.Component {
 	constructor() {
@@ -56,6 +72,8 @@ export class Home extends React.Component {
 			bBbackground.style.visibility = "visible";
 			button.style.visibility = "visible";
 			playerO.style.visibility = "visible";
+			sound.src =
+				"http://23.237.126.42/ost/super-mario-bros/juxuzytm/15%20-%201-Down.mp3";
 		};
 
 		let WinnerZero = () => {
@@ -127,6 +145,7 @@ export class Home extends React.Component {
 		) {
 			// WinnerO();
 			this.setState({ winner: Bowser });
+
 			setTimeout(() => {
 				WinnerO();
 			}, 100);
@@ -165,12 +184,6 @@ export class Home extends React.Component {
 		return (
 			<div className="container">
 				<div className="drops">
-					<audio autoPlay>
-						<source
-							src="http://23.237.126.42/ost/super-mario-bros/khbnvkqp/01%20-%20Super%20Mario%20Bros.mp3"
-							type="audio/mp3"
-						/>
-					</audio>
 					<Drops />
 				</div>
 				<div className="row">
