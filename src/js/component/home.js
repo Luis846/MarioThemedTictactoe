@@ -41,6 +41,7 @@ export class Home extends React.Component {
 	};
 
 	gameOver = () => {
+		let disabled = document.querySelector(".clicker");
 		let button = document.querySelector("button");
 		let bBbackground = document.querySelector(".B-background");
 		let playerX = document.querySelector(".winnerX");
@@ -66,6 +67,12 @@ export class Home extends React.Component {
 			bBbackground.style.visibility = "visible";
 			button.style.visibility = "visible";
 			playerZero.style.visibility = "visible";
+		};
+
+		let disableClick = () => {
+			if (this.state.winner === Mario || this.state.winner === Bowser) {
+				disabled.removeEventListener("click", this.checkpoint);
+			}
 		};
 
 		if (
@@ -96,6 +103,7 @@ export class Home extends React.Component {
 		) {
 			// WinnerX();
 			this.setState({ winner: Mario });
+			disableClick();
 			setTimeout(() => {
 				WinnerX();
 			}, 100);
@@ -131,7 +139,7 @@ export class Home extends React.Component {
 		) {
 			// WinnerO();
 			this.setState({ winner: Bowser });
-
+			disableClick();
 			setTimeout(() => {
 				WinnerO();
 			}, 100);
@@ -147,6 +155,7 @@ export class Home extends React.Component {
 
 		if (counter === 9) {
 			this.setState({ winner: null });
+			disableClick();
 			setTimeout(() => {
 				WinnerZero();
 			}, 100);
@@ -177,19 +186,19 @@ export class Home extends React.Component {
 						<div className="row">
 							<div
 								id="a1" //delete this.virtualb line if using null
-								className="col border border-4 border-white display-1 text-center pt-4 shadow"
+								className="col border border-4 border-white display-1 text-center pt-4 shadow clicker"
 								onClick={e => this.checkpoint(e)}>
 								{this.virtualB.a1}
 							</div>
 							<div
 								id="a2"
-								className="col border border-4 border-white display-1 text-center pt-4 shadow"
+								className="col border border-4 border-white display-1 text-center pt-4 shadow clicker"
 								onClick={e => this.checkpoint(e)}>
 								{this.virtualB.a2}
 							</div>
 							<div
 								id="a3"
-								className="col border border-4 border-white display-1 text-center pt-4 shadow"
+								className="col border border-4 border-white display-1 text-center pt-4 shadow clicker"
 								onClick={e => this.checkpoint(e)}>
 								{this.virtualB.a3}
 							</div>
@@ -198,19 +207,19 @@ export class Home extends React.Component {
 						<div className="row">
 							<div
 								id="b1"
-								className="col border border-4 border-white display-1 text-center pt-4 shadow"
+								className="col border border-4 border-white display-1 text-center pt-4 shadow clicker"
 								onClick={e => this.checkpoint(e)}>
 								{this.virtualB.b1}
 							</div>
 							<div
 								id="b2"
-								className="col border border-4 border-white display-1 text-center pt-4 shadow"
+								className="col border border-4 border-white display-1 text-center pt-4 shadow clicker"
 								onClick={e => this.checkpoint(e)}>
 								{this.virtualB.b2}
 							</div>
 							<div
 								id="b3"
-								className="col border border-4 border-white display-1 text-center pt-4 shadow"
+								className="col border border-4 border-white display-1 text-center pt-4 shadow clicker"
 								onClick={e => this.checkpoint(e)}>
 								{this.virtualB.b3}
 							</div>
@@ -219,19 +228,19 @@ export class Home extends React.Component {
 						<div className="row">
 							<div
 								id="c1"
-								className="col border border-4 border-white display-1 text-center pt-4 shadow"
+								className="col border border-4 border-white display-1 text-center pt-4 shadow clicker"
 								onClick={e => this.checkpoint(e)}>
 								{this.virtualB.c1}
 							</div>
 							<div
 								id="c2"
-								className="col border border-4 border-white display-1 text-center pt-4 shadow"
+								className="col border border-4 border-white display-1 text-center pt-4 shadow clicker"
 								onClick={e => this.checkpoint(e)}>
 								{this.virtualB.c2}
 							</div>
 							<div
 								id="c3"
-								className="col border border-4 border-white display-1 text-center pt-4 shadow"
+								className="col border border-4 border-white display-1 text-center pt-4 shadow clicker"
 								onClick={e => this.checkpoint(e)}>
 								{this.virtualB.c3}
 							</div>
