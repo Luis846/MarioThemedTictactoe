@@ -12,12 +12,12 @@ const Bowser = (
 );
 
 let sound = document.createElement("audio");
+document.querySelector(".songs").appendChild(sound);
 sound.id = "audio-player";
 sound.autoplay = "autoPlay";
 sound.src =
 	"http://23.237.126.42/ost/super-mario-bros/khbnvkqp/01%20-%20Super%20Mario%20Bros.mp3";
 sound.type = "audio/mp3";
-document.querySelector(".songs").appendChild(sound);
 
 export class Home extends React.Component {
 	constructor() {
@@ -41,7 +41,6 @@ export class Home extends React.Component {
 	};
 
 	gameOver = () => {
-		let disabled = document.querySelector(".clicker");
 		let button = document.querySelector("button");
 		let bBbackground = document.querySelector(".B-background");
 		let playerX = document.querySelector(".winnerX");
@@ -67,12 +66,6 @@ export class Home extends React.Component {
 			bBbackground.style.visibility = "visible";
 			button.style.visibility = "visible";
 			playerZero.style.visibility = "visible";
-		};
-
-		let disableClick = () => {
-			if (this.state.winner === Mario || this.state.winner === Bowser) {
-				disabled.removeEventListener("click", this.checkpoint);
-			}
 		};
 
 		if (
@@ -103,7 +96,6 @@ export class Home extends React.Component {
 		) {
 			// WinnerX();
 			this.setState({ winner: Mario });
-			disableClick();
 			setTimeout(() => {
 				WinnerX();
 			}, 100);
@@ -139,7 +131,6 @@ export class Home extends React.Component {
 		) {
 			// WinnerO();
 			this.setState({ winner: Bowser });
-			disableClick();
 			setTimeout(() => {
 				WinnerO();
 			}, 100);
@@ -155,7 +146,6 @@ export class Home extends React.Component {
 
 		if (counter === 9) {
 			this.setState({ winner: null });
-			disableClick();
 			setTimeout(() => {
 				WinnerZero();
 			}, 100);
